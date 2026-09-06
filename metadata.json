@@ -1,0 +1,6 @@
+{
+  "name": "SismosMex - Monitor Sísmico",
+  "description": "DQuake-Project: monitoreo sísmico público en tiempo real con la red de estaciones Raspberry Shake y SSN.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
