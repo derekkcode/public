@@ -10,7 +10,9 @@ import {
   FolderGit2,
   Terminal,
   Activity,
-  PlusCircle
+  PlusCircle,
+  Youtube,
+  Video
 } from 'lucide-react';
 import { ProjectsModal, ProjectItem } from '../components/ProjectsModal';
 
@@ -22,8 +24,11 @@ interface CollaboratorBanner {
   badgeLabel: string;
   description: string;
   avatarText: string;
+  avatarImage?: string;
   highlight?: boolean;
   projects?: ProjectItem[];
+  youtubeUrl?: string;
+  tiktokUrl?: string;
 }
 
 /**
@@ -52,6 +57,7 @@ const COLLABORATORS_DATA: CollaboratorBanner[] = [
     badgeLabel: 'Desarrollador Principal',
     description: 'Desarrollador principal de SismosMex y creador de la arquitectura técnica del sistema DQuake-Project.',
     avatarText: 'DA',
+    avatarImage: '/yo.jpg',
     highlight: true,
     projects: [
       {
@@ -72,6 +78,7 @@ const COLLABORATORS_DATA: CollaboratorBanner[] = [
     badgeLabel: 'Partner',
     description: 'Partner y apoyo en el monitor sísmico.',
     avatarText: 'AH',
+    avatarImage: '/adri.jpeg',
     projects: [
       {
         id: 'sismos-mp-app',
@@ -98,6 +105,28 @@ const COLLABORATORS_DATA: CollaboratorBanner[] = [
         tag: 'Red Aliada'
       }
     ]
+  },
+  {
+    id: 'mau',
+    name: 'Mau',
+    handle: 'QuakeCheckMX',
+    cardType: 'colaborador',
+    badgeLabel: 'COLABORADOR',
+    description: 'promocionador de nuestro proyectoo',
+    avatarText: 'M',
+    avatarImage: '/conejito.jpg',
+    youtubeUrl: 'https://www.youtube.com/@QuakeCheckMX/'
+  },
+  {
+    id: 'mateo-j',
+    name: 'Mateo J.',
+    handle: 'mateo_jimenez4276',
+    cardType: 'colaborador',
+    badgeLabel: 'COLABORADOR',
+    description: 'Promocionador de nuestro proyecto.',
+    avatarText: 'MJ',
+    avatarImage: '/mateo.jpeg',
+    tiktokUrl: 'https://www.tiktok.com/@mateo_jimenez4276?_r=1&_t=ZS-99sVQzT3Dz2'
   }
 ];
 
@@ -187,12 +216,19 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
                   {/* Left: Avatar + Details */}
                   <div className="flex items-start gap-3.5 sm:gap-5 min-w-0">
                     {/* Banner Avatar / Monogram */}
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border flex items-center justify-center font-mono font-bold text-base sm:text-xl shrink-0 ${
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border flex items-center justify-center font-mono font-bold text-base sm:text-xl shrink-0 overflow-hidden ${
                       isDeveloper
                         ? 'bg-zinc-900 border-zinc-600 text-white shadow-inner'
                         : 'bg-zinc-900 border-zinc-800 text-zinc-300'
                     }`}>
-                      {isDeveloper ? (
+                      {collab.avatarImage ? (
+                        <img 
+                          src={collab.avatarImage} 
+                          alt={collab.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : isDeveloper ? (
                         <div className="flex flex-col items-center justify-center">
                           <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
@@ -212,7 +248,9 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
                         <span className={`text-[9px] sm:text-[10px] font-mono tracking-wide px-2 sm:px-2.5 py-0.5 rounded border uppercase font-semibold shrink-0 ${
                           isDeveloper
                             ? 'bg-white text-black border-white'
-                            : 'bg-zinc-900 text-zinc-300 border-zinc-700'
+                            : collab.badgeLabel === 'COLABORADOR' || collab.cardType === 'colaborador'
+                              ? 'bg-zinc-800 text-zinc-200 border-zinc-600'
+                              : 'bg-zinc-900 text-zinc-300 border-zinc-700'
                         }`}>
                           {collab.badgeLabel}
                         </span>
@@ -228,7 +266,7 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
                       {collab.handle && (
                         <div className="text-xs sm:text-sm font-mono text-zinc-400 flex items-center gap-1.5 truncate">
                           <span className="text-zinc-500">@</span>
-                          <span className="text-zinc-300 font-semibold truncate">{collab.handle}</span>
+                          <span className="text-zinc-300 font-semibold truncate">{collab.handle.replace(/^@/, '')}</span>
                         </div>
                       )}
 
@@ -251,6 +289,34 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
                         <span>Ver proyectos</span>
                         <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:translate-x-0.5 transition-transform" />
                       </button>
+                    )}
+
+                    {collab.youtubeUrl && (
+                      <a
+                        id={`btn-yt-${collab.id}`}
+                        href={collab.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl border border-red-900/60 hover:border-red-500 bg-red-950/40 hover:bg-red-900/50 text-red-200 hover:text-white font-mono text-xs font-semibold transition-all shadow-sm w-full sm:w-auto cursor-pointer"
+                      >
+                        <Youtube className="w-4 h-4 text-red-500" />
+                        <span>Canal de YouTube</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-red-400/80" />
+                      </a>
+                    )}
+
+                    {collab.tiktokUrl && (
+                      <a
+                        id={`btn-tiktok-${collab.id}`}
+                        href={collab.tiktokUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl border border-zinc-700 hover:border-zinc-500 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 hover:text-white font-mono text-xs font-semibold transition-all shadow-sm w-full sm:w-auto cursor-pointer"
+                      >
+                        <Video className="w-4 h-4 text-cyan-400" />
+                        <span>TikTok</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
+                      </a>
                     )}
 
                     {isDeveloper && (
