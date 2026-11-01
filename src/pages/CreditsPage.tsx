@@ -64,7 +64,7 @@ const INITIAL_CREDITS_DATA: CreditItem[] = [
     buttons: [
       {
         label: 'Abrir Monitor',
-        url: 'https://monitor.sismosmex.com/',
+        url: 'https://m.sismosmex.com/',
         type: 'primary',
         icon: 'external'
       },
@@ -354,7 +354,7 @@ export const CreditsPage: React.FC<CreditsPageProps> = ({
           )}
 
           <a
-            href="https://monitor.sismosmex.com/"
+            href="https://m.sismosmex.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] rounded-xl bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors shadow-sm w-full sm:w-auto"

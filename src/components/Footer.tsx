@@ -42,12 +42,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </button>
           <span className="text-zinc-800">•</span>
           <a 
-            href="https://monitor.sismosmex.com/" 
+            href="https://m.sismosmex.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-zinc-300 hover:text-white font-mono flex items-center gap-1 transition-colors py-1 px-1.5"
           >
-            <span>monitor.sismosmex.com</span>
+            <span>m.sismosmex.com</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>

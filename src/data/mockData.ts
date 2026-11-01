@@ -327,7 +327,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: '¿Dónde puedo ver el monitor en vivo?',
-    answer: 'Puedes acceder al monitor web interactivo de forma completamente libre y gratuita desde cualquier navegador web en https://monitor.sismosmex.com/. Funciona en computadoras, tabletas y teléfonos inteligentes.',
+    answer: 'Puedes acceder al monitor web interactivo de forma completamente libre y gratuita desde cualquier navegador web en https://m.sismosmex.com/. Funciona en computadoras, tabletas y teléfonos inteligentes.',
     category: 'general',
   },
   {

@@ -201,7 +201,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
               className="pt-2 sm:pt-3"
             >
               <a
-                href="https://monitor.sismosmex.com/"
+                href="https://m.sismosmex.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onClose}
@@ -217,7 +217,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
                       <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                     </div>
                     <div className="text-[11px] text-zinc-400 font-mono truncate">
-                      monitor.sismosmex.com
+                      m.sismosmex.com
                     </div>
                   </div>
                 </div>

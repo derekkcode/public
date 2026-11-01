@@ -64,7 +64,7 @@ const COLLABORATORS_DATA: CollaboratorBanner[] = [
         id: 'sismosmex-monitor',
         name: 'SismosMex Monitor',
         description: 'Plataforma sismológica web en tiempo real para México.',
-        url: 'https://monitor.sismosmex.com/',
+        url: 'https://m.sismosmex.com/',
         status: 'En Producción',
         tag: 'DQuake'
       }
@@ -112,7 +112,7 @@ const COLLABORATORS_DATA: CollaboratorBanner[] = [
     handle: 'QuakeCheckMX',
     cardType: 'colaborador',
     badgeLabel: 'COLABORADOR',
-    description: 'promocionador de nuestro proyectoo',
+    description: 'promocionador de nuestro proyecto.',
     avatarText: 'M',
     avatarImage: '/conejito.jpg',
     youtubeUrl: 'https://www.youtube.com/@QuakeCheckMX/'
@@ -321,7 +321,7 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
 
                     {isDeveloper && (
                       <a
-                        href="https://monitor.sismosmex.com/"
+                        href="https://m.sismosmex.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl bg-white hover:bg-zinc-200 text-black font-mono text-xs font-bold transition-all shadow-sm w-full sm:w-auto"
@@ -356,7 +356,7 @@ export const CollaboratorsPage: React.FC<CollaboratorsPageProps> = ({ onBack }) 
           <div className="text-xs text-zinc-400">Accede directamente al monitor sísmico público interactivo.</div>
         </div>
         <a
-          href="https://monitor.sismosmex.com/"
+          href="https://m.sismosmex.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] rounded-xl bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors shadow-sm w-full sm:w-auto shrink-0"

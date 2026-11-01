@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu, onNavigateHome }) =>
 
           <a
             id="header-open-monitor"
-            href="https://monitor.sismosmex.com/"
+            href="https://m.sismosmex.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 min-h-[40px] sm:min-h-[44px] rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors duration-150 shadow-sm"

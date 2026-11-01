@@ -44,7 +44,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
           <a
             id="hero-open-monitor-btn"
-            href="https://monitor.sismosmex.com/"
+            href="https://m.sismosmex.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[44px] rounded-lg bg-white hover:bg-zinc-200 text-black font-bold text-sm transition-all duration-150 shadow-md w-full sm:w-auto"
@@ -289,7 +289,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="pt-2 sm:pt-3">
             <a
               id="cta-open-monitor-bottom"
-              href="https://monitor.sismosmex.com/"
+              href="https://m.sismosmex.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 min-h-[44px] rounded-lg bg-white hover:bg-zinc-200 text-black font-bold text-sm transition-colors duration-150 shadow-md w-full sm:w-auto"
@@ -301,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="pt-1">
             <span className="text-[10px] sm:text-[11px] font-mono text-zinc-500 break-all sm:break-normal">
-              URL oficial: https://monitor.sismosmex.com/
+              URL oficial: https://m.sismosmex.com/
             </span>
           </div>
         </div>
